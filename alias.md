@@ -14,4 +14,8 @@ alias egrep='egrep --color=auto'
 # mac default only
 alias ls='ls -G'
 alias ll='ls -l'
+
+# hide/show file from Finder on mac
+alias hide-file='chflags hidden'
+alias unhide-file='chflags nohidden'
 ```
