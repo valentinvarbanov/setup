@@ -18,4 +18,23 @@ alias ll='ls -l'
 # hide/show file from Finder on mac
 alias hide-file='chflags hidden'
 alias unhide-file='chflags nohidden'
+
+# start a web server on mac
+sudo-start-web-server() {
+    if [[ $# -ne 1 ]]; then 
+        port=8000
+    else
+        port=$1
+    fi    
+    sudo python -m SimpleHTTPServer $port
+}
+
+start-web-server() {
+    if [[ $# -ne 1 ]]; then 
+        port=8000
+    else
+        port=$1
+    fi    
+    python -m SimpleHTTPServer $port
+}
 ```
