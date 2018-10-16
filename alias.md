@@ -19,6 +19,10 @@ alias ll='ls -l'
 alias hide-file='chflags hidden'
 alias unhide-file='chflags nohidden'
 
+# fast objc/objc++ compile
+alias clang-objc='clang -fobjc-arc -fmodules'
+alias clang-objc++='clang++ -fobjc-arc -fmodules'
+
 # start a web server on mac
 sudo-start-web-server() {
     if [[ $# -ne 1 ]]; then 
