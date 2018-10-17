@@ -23,6 +23,11 @@ alias unhide-file='chflags nohidden'
 alias clang-objc='clang -fobjc-arc -fmodules'
 alias clang-objc++='clang++ -fobjc-arc -fmodules'
 
+# reset/restore default mac command-line utils
+export PATH_BACKUP="$PATH"
+alias reset-path='PATH=":/usr/bin:/bin:/usr/sbin:/sbin"'
+alias restore-path='PATH="$PATH_BACKUP"'
+
 # start a web server on mac
 sudo-start-web-server() {
     if [[ $# -ne 1 ]]; then 
