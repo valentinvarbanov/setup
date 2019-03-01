@@ -11,6 +11,11 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# aliases to always output color, even when piping 
+alias grep-color='grep --color=always'
+alias fgrep-color='fgrep --color=always'
+alias egrep-color='egrep --color=always'
+
 # mac default only
 alias ls='ls -G'
 alias ll='ls -l'
@@ -35,6 +40,7 @@ sudo-start-web-server() {
     else
         port=$1
     fi    
+    echo "Starting web server in $(pwd) at port $port"
     sudo python -m SimpleHTTPServer $port
 }
 
@@ -44,6 +50,7 @@ start-web-server() {
     else
         port=$1
     fi    
+    echo "Starting web server in $(pwd) at port $port"
     python -m SimpleHTTPServer $port
 }
 ```
