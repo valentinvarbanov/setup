@@ -38,6 +38,11 @@ export _JAVA_OPTIONS_BAKUP="$_JAVA_OPTIONS_BAKUP"
 alias fix-java-focus='export _JAVA_OPTIONS="-Djava.awt.headless=true"'
 alias unfix-java-focus='export _JAVA_OPTIONS="$_JAVA_OPTIONS_BAKUP"'
 
+# show/hide files and folders on mac
+# usage: hide FILE / unhide FILE
+alias hide='chflags hidden'
+alias unhide='chflags nohidden'
+
 # start a web server on mac
 sudo-start-web-server() {
     if [[ $# -ne 1 ]]; then 
