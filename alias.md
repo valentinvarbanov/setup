@@ -33,6 +33,11 @@ export PATH_BACKUP="$PATH"
 alias reset-path='PATH=":/usr/bin:/bin:/usr/sbin:/sbin"'
 alias restore-path='PATH="$PATH_BACKUP"'
 
+# stop java executables from stealing focus
+export _JAVA_OPTIONS_BAKUP="$_JAVA_OPTIONS_BAKUP"
+alias fix-java-focus='export _JAVA_OPTIONS="-Djava.awt.headless=true"'
+alias unfix-java-focus='export _JAVA_OPTIONS="$_JAVA_OPTIONS_BAKUP"'
+
 # start a web server on mac
 sudo-start-web-server() {
     if [[ $# -ne 1 ]]; then 
