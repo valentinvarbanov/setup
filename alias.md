@@ -43,6 +43,10 @@ alias unfix-java-focus='export _JAVA_OPTIONS="$_JAVA_OPTIONS_BAKUP"'
 alias hide='chflags hidden'
 alias unhide='chflags nohidden'
 
+# usb
+alias fix-usb='sudo killall -STOP usbd'
+alias unfix-usb='sudo killall -CONT usbd'
+
 # start a web server on mac
 sudo-start-web-server() {
     if [[ $# -ne 1 ]]; then 
