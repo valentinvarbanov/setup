@@ -44,8 +44,8 @@ alias hide='chflags hidden'
 alias unhide='chflags nohidden'
 
 # usb
-alias fix-usb='sudo killall -STOP usbd'
-alias unfix-usb='sudo killall -CONT usbd'
+alias fix-usb='sudo killall -STOP -c usbd'
+alias unfix-usb='sudo killall -CONT -c usbd'
 
 # start a web server on mac
 sudo-start-web-server() {
