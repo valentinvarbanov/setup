@@ -1,0 +1,16 @@
+[
+    {
+        "caption": "Open in Terminal...",
+        "command": "git",
+        "args": {
+            "argv": ["openterm"]
+        }
+    },
+    {
+        "caption": "Gerrit Review...",
+        "command": "git",
+        "args": {
+            "argv": ["push", "--progress", "origin", "HEAD:refs/for/master"]
+        }
+    }
+]
