@@ -1,3 +1,18 @@
+# Sublime Text
+
+* Install `Package Control`(cmd+shift+P)
+* Install `A File Icon`
+
+## Linter
+
+The following IDE like featues can be enabled by installing:
+
+* Install `SublimeLinter`
+
+### JSON
+
+* Install `SublimeLinter-json` for detecting errors in JSON files
+
 # Sublime Merge
 
 1. Set up git alias(`~/.gitconfig`)
