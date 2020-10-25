@@ -20,7 +20,30 @@ echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
 chsh -s /usr/local/bin/bash;
 ```
 
-Install up to date GNU versions of default commands
+Install up to date GNU versions of default commands(outdated)
+```bash
+brew install coreutils
+brew install gnu-sed 
+brew install gnu-tar 
+brew install gnu-which 
+brew install grep   
+
+brew install bash-completion@2
+
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew install findutils
+```
+
+Add the GNU alternative tools in the path:
+```bash
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-which/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+```
+
+Outdated - Install up to date GNU versions of default commands
 ```bash
 brew install coreutils
 brew install gnu-sed --with-default-names
