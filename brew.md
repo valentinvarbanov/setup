@@ -51,11 +51,12 @@ brew install findutils --with-default-names
 Append to `.bashrc` or `.bash_profile`
 ```bash
 # for GNU coreutils
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gnu-which/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
+PATH="$(brew --prefix)/opt/gnu-which/libexec/gnubin:$PATH"
+PATH="$(brew --prefix)/opt/grep/libexec/gnubin:$PATH"
+PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
 
 # for bash completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
@@ -94,6 +95,12 @@ brew install boost
 
 Not needed at the moment, but good for future compatibility
 ```bash
-brew install gnu-getopt --with-default-names
-brew install gnu-time --with-default-names
+brew install gnu-getopt
+brew install gnu-time
+```
+
+PATH additions:
+```bash
+PATH="$(brew --prefix)/opt/gnu-time/libexec/gnubin:$PATH"
+PATH="$(brew --prefix)/opt/gnu-getopt/bin:$PATH"
 ```
