@@ -34,15 +34,6 @@ brew install bash-completion@2
 brew install findutils
 ```
 
-Add the GNU alternative tools in the path:
-```bash
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gnu-which/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-```
-
 Outdated - Install up to date GNU versions of default commands
 ```bash
 brew install coreutils
@@ -55,11 +46,22 @@ brew install bash-completion@2
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils --with-default-names
-
-
 ```
 
 Append to `.bashrc` or `.bash_profile`
+```bash
+# for GNU coreutils
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-which/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+
+# for bash completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+```
+
+Outdated - Append to `.bashrc` or `.bash_profile`
 ```bash
 # for GNU coreutils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
