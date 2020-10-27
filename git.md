@@ -26,4 +26,6 @@ Append to global git config (usually `~/.gitconfig`):
     lgg = log --graph --all --decorate --oneline
 
     lggg = log --graph --all --decorate --abbrev-commit --date-order
+    
+    review = "!f() { if [[ $# -eq 0 ]] ; then branch='master' ; else branch=$1 ; shift ; fi ; git push origin \"HEAD:refs/for/$branch\" \"$@\" ; } ; f"
 ```
