@@ -2,7 +2,7 @@
 # Custom aliases:
 ```bash
 # which show alias
-alias which='alias | /usr/local/bin/which --tty-only --read-alias --show-dot --show-tilde'
+alias which='alias | which --tty-only --read-alias --show-dot --show-tilde'
 
 # linux or mac with gnu utils
 alias ls='ls --color=auto'
