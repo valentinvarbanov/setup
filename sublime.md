@@ -1,17 +1,10 @@
 # Sublime Text
 
 * Install `Package Control`(cmd+shift+P)
-* Install `A File Icon`
-
-## Linter
-
-The following IDE like featues can be enabled by installing:
-
-* Install `SublimeLinter`
-
-### JSON
-
-* Install `SublimeLinter-json` for detecting errors in JSON files
+* Install the following packages:
+** Autocomplete - `All Autocomplete`, `AutocompletionFuzzy`, + dependency `Expression`
+** Code highlighting - `CMake`, `Docker Syntax Highligthing`, `LESS`
+** Sidebar - `FileIcons`, `SideBarEnhancements`
 
 # Sublime Merge
 
