@@ -30,7 +30,7 @@ alias clang-objc++='clang++ -fobjc-arc -fmodules'
 
 # reset/restore default mac command-line utils
 export PATH_BACKUP="$PATH"
-alias reset-path='PATH=":/usr/bin:/bin:/usr/sbin:/sbin"'
+alias reset-path='PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"'
 alias restore-path='PATH="$PATH_BACKUP"'
 
 # stop java executables from stealing focus
