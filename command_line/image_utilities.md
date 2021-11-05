@@ -34,3 +34,11 @@ sips --resampleHeightWidth HEIGHT WIDTH FILE
 
 sips -z 500 500 image.jpg
 ```
+
+### Convert `.svg` to `.png`
+
+```bash
+qlmanage -t -s SIZE -o OUTPUT INPUT.svg 
+
+qlmanage -t -s 1024 -o png/ image.svg 
+```
