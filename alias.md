@@ -55,7 +55,7 @@ sudo-start-web-server() {
         port=$1
     fi    
     echo "Starting web server in $(pwd) at port $port"
-    sudo python -m SimpleHTTPServer $port
+    sudo python3 -m http.server $port
 }
 
 start-web-server() {
@@ -65,6 +65,6 @@ start-web-server() {
         port=$1
     fi    
     echo "Starting web server in $(pwd) at port $port"
-    python -m SimpleHTTPServer $port
+    python3 -m http.server $port
 }
 ```
