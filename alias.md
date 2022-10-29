@@ -67,4 +67,7 @@ start-web-server() {
     echo "Starting web server in $(pwd) at port $port"
     python3 -m http.server $port
 }
+
+ # start a plantuml web server (with Docker)
+ alias start-plantuml='docker run -d -p 8080:8080 plantuml/plantuml-server:tomcat'
 ```
