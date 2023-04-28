@@ -29,3 +29,11 @@ Append to global git config (usually `~/.gitconfig`):
     
     review = "!f() { if [[ $# -eq 0 ]] ; then branch='master' ; else branch=$1 ; shift ; fi ; git push origin \"HEAD:refs/for/$branch\" \"$@\" ; } ; f"
 ```
+
+Configure `gh` cli to use vim instead of nano:
+```bash
+# .bash_profile or .bashrc
+
+# Configure gh cli editor
+GIT_EDITOR=vim
+```
