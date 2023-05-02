@@ -35,5 +35,5 @@ Configure `gh` cli to use vim instead of nano:
 # .bash_profile or .bashrc
 
 # Configure gh cli editor
-GIT_EDITOR=vim
+export GIT_EDITOR=vim
 ```
