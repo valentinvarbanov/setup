@@ -47,6 +47,9 @@ alias unhide='chflags nohidden'
 alias fix-usb='sudo killall -STOP -c usbd'
 alias unfix-usb='sudo killall -CONT -c usbd'
 
+# audio (mic, headphones, speaker not working)
+alias fix-audio='sudo pkill coreaudiod'
+
 # start a web server on mac
 sudo-start-web-server() {
     if [[ $# -ne 1 ]]; then 
