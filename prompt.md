@@ -1,5 +1,6 @@
 # Improved bash and mysql prompt
 
+Inspired by: https://github.com/magicmonty/bash-git-prompt/blob/master/gitstatus.sh
 
 Add to `.bashrc` or `.bash_profile`
 ```bash
@@ -15,6 +16,9 @@ __color_blue_bold='\[\033[01;34m\]'
 __color_magenta_bold='\[\033[01;35m\]'
 __color_cyan_bold='\[\033[01;36m\]'
 
+
+__GIT_PROMPT_IGNORE_STASH=1
+__GIT_PROMPt_IGNORE_SUBMODULES="--ignore-submodules"
 # git
 __find_git_branch() {
 
@@ -35,7 +39,7 @@ __find_git_branch() {
 			__GIT_PROMPT_DIR="$( cd -P "$( dirname "${SOURCE}" )" && pwd )"
 		fi
 
-		local gitstatus=$( LC_ALL=C git status --untracked-files=${__GIT_PROMPT_SHOW_UNTRACKED_FILES:-all} --porcelain --branch )
+		local gitstatus=$( LC_ALL=C git --no-optional-locks status ${__GIT_PROMPt_IGNORE_SUBMODULES} --untracked-files=${__GIT_PROMPT_SHOW_UNTRACKED_FILES:-normal} --porcelain --branch )
 
 		# if the status is fatal, exit now
 		[[ "$?" -ne 0 ]] && exit 0
