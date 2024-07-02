@@ -13,11 +13,15 @@ Update bash
 # install
 brew install bash
 
-# add to supported shells
+# add to supported shells (check with which bash)
 echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+# or
+echo '/opt/homebrew/bin/bash' | sudo tee -a /etc/shells;
 
 # change for current user
-chsh -s /usr/local/bin/bash;
+chsh -s /usr/local/bin/bash
+# or
+chsh -s /opt/homebrew/bin/bash
 ```
 
 Install up to date GNU versions of default commands(outdated)
@@ -27,25 +31,12 @@ brew install gnu-sed
 brew install gnu-tar 
 brew install gnu-which 
 brew install grep   
+brew install man-db
 
 brew install bash-completion@2
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
-```
-
-Outdated - Install up to date GNU versions of default commands
-```bash
-brew install coreutils
-brew install gnu-sed --with-default-names
-brew install gnu-tar --with-default-names
-brew install gnu-which --with-default-names
-brew install grep --with-default-names    
-
-brew install bash-completion@2
-
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew install findutils --with-default-names
 ```
 
 Append to `.bashrc` or `.bash_profile`
@@ -57,22 +48,9 @@ PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
 PATH="$(brew --prefix)/opt/gnu-which/libexec/gnubin:$PATH"
 PATH="$(brew --prefix)/opt/grep/libexec/gnubin:$PATH"
 PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
-
+PATH="$(brew --prefix)/opt/man-db/libexec/bin:$PATH"
 # for bash completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-```
-
-Outdated - Append to `.bashrc` or `.bash_profile`
-```bash
-# for GNU coreutils
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
-# for bash completion
-if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-    . $(brew --prefix)/share/bash-completion/bash_completion
-fi
-
 ```
 
 Must have utilities
@@ -88,8 +66,8 @@ brew install mysql
 
 Those installs may take longer to complete
 ```bash
-brew install python
 brew install python3
+brew install node
 brew install boost
 ```
 
