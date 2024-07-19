@@ -1,6 +1,11 @@
-# Improved bash and mysql prompt
+# Improved bash prompt
 
-Inspired by: https://github.com/magicmonty/bash-git-prompt/blob/master/gitstatus.sh
+Git inspired by: https://github.com/magicmonty/bash-git-prompt/blob/master/gitstatus.sh
+
+Supports showing interractive status in the prompt for:
+
+* Git - current branch, clean/dirty status, comaprison to remote
+* Python virtual environment - shows which virtual environment is used (if any)
 
 Add to `.bashrc` or `.bash_profile`
 ```bash
@@ -155,9 +160,20 @@ __find_git_branch() {
     fi
 }
 
+__find_venv() {
+    # Get Virtual Env
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        # Strip out the path and just leave the env name
+        echo " $__color_yellow_bold(${VIRTUAL_ENV##*/})$__color_reset"
+    fi
+}
+
 # echo for tab name
 # if for user color if root red else green
-PROMPT_COMMAND='echo -en "\033]0;${USER}\007" && if [[ $UID -ne 0 ]]; then PS1="$__color_green_bold\u $__color_blue_bold\w$(__find_git_branch)$__color_reset\\\$ "; else PS1="$__color_red_bold\u $__color_blue_bold\w$(__find_git_branch)$__color_reset\\\$ "; fi'
+PROMPT_COMMAND='echo -en "\033]0;${USER}\007" && if [[ $UID -ne 0 ]]; then PS1="$__color_green_bold\u $__color_blue_bold\w$(__find_git_branch)$(__find_venv)$__color_reset\\\$ "; else PS1="$__color_red_bold\u $__color_blue_bold\w$(__find_git_branch)$(__find_venv)$__color_reset\\\$ "; fi'
 export MYSQL_PS1="\u@\h [\d]> "
+
+# legacy
+PS1="$__color_green_bold\u $__color_blue_bold\w$__color_reset\\\$ "
 
 ```
