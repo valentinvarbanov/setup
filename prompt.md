@@ -7,7 +7,10 @@ Supports showing interractive status in the prompt for:
 * Git - current branch, clean/dirty status, comaprison to remote
 * Python virtual environment - shows which virtual environment is used (if any)
 
+![prompt](img/prompt.png)
+
 Add to `.bashrc` or `.bash_profile`
+
 ```bash
 export CLICOLOR=1
 
